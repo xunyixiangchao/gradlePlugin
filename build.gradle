@@ -1,18 +1,19 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
-        
+        //首先需要配置本地的 maven 仓库地址，这里填写的是相对路径，也可以是全路径
+        maven {
+            url uri('./repo')
+        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
-        
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        //然后，添加依赖的插件，形式是 groupId：artifactId：version
+        //这些都是插件发布时，定义的名称
+        classpath 'com.lis.gradleplugin:myplugin:1.0.0'
     }
 }
 
@@ -20,7 +21,10 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven {
+            url uri('./repo')
+        }
+
     }
 }
 

@@ -9,7 +9,7 @@ public class MyPlugin implements Plugin<Project> {
     public void apply(Project project) {
         Logger logger = project.getLogger();
         logger.error("=====================");
-        logger.error("最简单的Gradle插件");
+        logger.error("简单的Gradle插件");
         logger.error("=====================");
     }
 }
