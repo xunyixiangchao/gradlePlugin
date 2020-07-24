@@ -24,7 +24,7 @@ gradlePlugin
 
 2. 无须resources目录
 
-   
+
 
    build.gradle的配置：
 
@@ -35,13 +35,13 @@ gradlePlugin
        google()
        jcenter()
    }
-   
+
    dependencies {
        implementation gradleApi() //gradle sdk
      	implementation localGroovy() //groovy sdk
        implementation 'com.android.tools.build:gradle:3.6.3'
    }
-   
+
    sourceCompatibility = "1.7"
    targetCompatibility = "1.7"
    ```
@@ -74,16 +74,16 @@ apply plugin: com.lis.buildsrc.MyPlugin
 
 执行：**Build-make Module 'app'**生成补丁。
 
-![image-20200724100113259](D:\typora_data\gradle\img\build.png)
+![build](https://github.com/xunyixiangchao/gradlePlugin/blob/master/img/build.png)
 
 在底部的 **Buid-Build Output**中便可以看到打印日志：
 
-=====================
+'====================='
 简单的Gradle插件
 
-=====================
+'====================='
 
-![image-20200724100524283](D:\typora_data\gradle\img\buildoutput.png)
+![build output](https://github.com/xunyixiangchao/gradlePlugin/blob/master/img/buildoutput.png)
 
 ## 插件的发布
 
@@ -115,7 +115,7 @@ gradlePlugin
 
 在buildSrc的main文件夹下添加**resources**文件夹，在该文件夹下添加***META-INF***，***META-INF***文件夹下添加***gradle-plugins***
 
-在***gradle-plugins***中添加com.lis.myplugin.properties  
+在***gradle-plugins***中添加com.lis.myplugin.properties
 
 这里命名为 `com.lis.myplugin.properties` ，一定要注意后缀名称，那么使用插件时的名称就是`com.lis.myplugin`，文件里面的内容填写如下：
 
@@ -156,11 +156,11 @@ targetCompatibility = "1.7"
 
 同步后在gradle模块内，会出现发布按钮
 
-![image-20200724141451792](D:\typora_data\gradle\img\upload.png)
+![upload](https://github.com/xunyixiangchao/gradlePlugin/blob/master/img/upload.png)
 
 双击**uploadArchives** ,插件就发布到了本地的maven仓库，这里我们是在项目的根目录里，所以会在GradlePlugin下生成repo文件夹及文件
 
-![image-20200724141759298](D:\typora_data\gradle\img\repo.png)
+![repo](https://github.com/xunyixiangchao/gradlePlugin/blob/master/img/repo.png)
 
 
 
